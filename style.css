@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Shantell Sans', cursive;
+    
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fefefe;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #687483;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    padding: 4px;
+    border-radius: 4px;
+    color: #fff;
+    /* font-family: 'Roboto', sans-serif; */
+    letter-spacing: 1px;
+}
+
+img {
+    width: 22px;
+    height: 22px;
+}
+
+.container-icons {
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.grid-container_button {
+    width: 100%;
+    margin: 20px 0;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 255ms ease-in-out;
+    border: 2px solid #eab308;
+    font-weight: lighter;
+}
+
+.grid-container_button:hover {
+    background: #e7ebf1;
+    border: 2px solid #22c55e;
+}
+.grid-container_button:focus {
+    outline: none;
+    border: 2px solid #22c55e;
+}
+
+.grid-container {
+    width: 304px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 8px;
+}
+
+.grid-item {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: transform 1s ease-in-out;
+
+}
+.grid-container_div {
+    width: 54px;
+    height: 54px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e7ebf1;
+    display: grid;
+    place-items: center;
+    transition: transform 255ms ease-in-out;
+}
+
+.flip {
+    transform: rotateY(180deg);
+    color: #fff;
+}
+
+.wrong {
+    background-color: #94a3b8;
+}
+.good {
+    background-color: #22c55e;
+}
+.correct {
+    background-color: #eab308;
+}
+
+.flip-reverse {
+    transform: rotateY(-180deg);
+}
+
+.animation {
+    transition: opacity 1s ease;
+    animation-name: slide-up;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide-up {
+    0% { 
+        background: #fff;
+        width: 32px;
+        height: 32px; 
+    }
+    100% { 
+        background-color: #e7ebf1;
+        width: 54px;
+        height: 54px; 
+    }
+  }
