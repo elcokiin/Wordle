@@ -11,10 +11,16 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: #fefefe;
+}
+
+.container-main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 header {
@@ -74,6 +80,7 @@ img {
 }
 
 .grid-container {
+    margin-top: 80px;
     width: 304px;
     position: relative;
     display: grid;
@@ -119,6 +126,23 @@ img {
     transform: rotateY(-180deg);
 }
 
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard_row {
+    display: flex;
+}
+.dashboard-key {
+    padding: 12px;
+    margin: 2px;
+    border-radius: 4px;
+    background-color: #e7ebf1;
+    cursor: pointer;
+}
+
 .animation {
     transition: opacity 1s ease;
     animation-name: slide-up;
@@ -137,4 +161,10 @@ img {
         width: 54px;
         height: 54px; 
     }
-  }
+}
+
+@media (max-width: 780px) {
+    .dashboard {
+        display: none;
+    }
+}

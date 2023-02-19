@@ -10,7 +10,34 @@ let column = 0
 let row = 0
 let world = ""
 let finished = false
-const lettersAbc = 'abcdefghijklmnñopqrstuvwxyz'
+const lettersAzc = 'qwertyuiopasdfghjklñzxcvbnm'
+
+const createDashboard = () => {
+    let i = 0
+    const row1 = $(".dashboard_row-1")
+    const row2 = $(".dashboard_row-2")
+    const row3 = $(".dashboard_row-3")
+
+    lettersAzc.split("").forEach(e => {
+        const key = e.toUpperCase()
+        if (i < 10) {
+            row1.innerHTML += `<button class="dashboard-key dashboard-key-${i}"><span>${key}</span></button>`
+        } else if(i < 20) {
+            row2.innerHTML += `<button class="dashboard-key dashboard-key-${i}"><span>${key}</span></button>`
+        } else {
+            if(i === 20) {
+                row3.innerHTML += `<button class="dashboard-key dashboard-key-${i}"><span>DEL</span></button>`
+                row3.innerHTML += `<button class="dashboard-key dashboard-key-${i}"><span>${key}</span></button>`
+            } else if (i === 26) {
+                row3.innerHTML += `<button class="dashboard-key dashboard-key-${i}"><span>${key}</span></button>`
+                row3.innerHTML += `<button class="dashboard-key dashboard-key-${i}"><span>ENTER</span></button>`
+            } else {
+                row3.innerHTML += `<button class="dashboard-key dashboard-key-${i}"><span>${key}</span></button>`
+            }
+        }
+        i++
+    })
+}
 
 const createCells = () => {
     container.innerHTML = ""
@@ -19,14 +46,11 @@ const createCells = () => {
     column = 0
     row = 0
     world = ""
-    document.body.focus()
 
     for( let i=0; i < boxes; i++ ){
         container.innerHTML += `<div class="grid-container_div grid-container_div-${i}"><span class="grid-item grid-item_${i}"></span></div>`
     }
 }
-
-createCells()
 
 const getWorld = () => {
     return "avena"
@@ -54,8 +78,7 @@ const removeKey = () => {
     world = world.substring(0, world.length - 1)
 }
 
-
-const validateWorld = () => {
+const pressEnter = () => {
     let i = 0
 
     const originalWorld = getWorld()
@@ -99,10 +122,9 @@ document.addEventListener('keydown', ({ key }) => {
             }
         } else if(key == "Enter"){
             if(column === 5 && row < 5) {
-                validateWorld()
+                pressEnter()
             }
-            // comprobar
-        } else if(lettersAbc.includes(key)){
+        } else if(lettersAzc.includes(key)){
             if(world.length == 0) {
                 addkey(key)
             } else if(world.length%5 != 0) {
@@ -111,3 +133,6 @@ document.addEventListener('keydown', ({ key }) => {
         }
     }
 })
+
+createCells()
+createDashboard()
