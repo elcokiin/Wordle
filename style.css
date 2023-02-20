@@ -112,16 +112,6 @@ img {
     color: #fff;
 }
 
-.wrong {
-    background-color: #94a3b8;
-}
-.good {
-    background-color: #22c55e;
-}
-.correct {
-    background-color: #eab308;
-}
-
 .flip-reverse {
     transform: rotateY(-180deg);
 }
@@ -136,11 +126,22 @@ img {
     display: flex;
 }
 .dashboard-key {
-    padding: 12px;
+    padding: 20px;
     margin: 2px;
     border-radius: 4px;
     background-color: #e7ebf1;
     cursor: pointer;
+    border: none;
+}
+
+.wrong {
+    background-color: #94a3b8;
+}
+.good {
+    background-color: #22c55e;
+}
+.correct {
+    background-color: #eab308;
 }
 
 .animation {
@@ -163,7 +164,7 @@ img {
     }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 840px) {
     .dashboard {
         display: none;
     }
