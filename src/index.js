@@ -134,6 +134,7 @@ const validateWorld = (classSpan, classContainer, dashboard = false) => {
 
         if (e === key) {
             container.classList.add('good')
+            fakeWorld = fakeWorld.slice(0, i+1) + fakeWorld.slice(i+2)
         } else if (fakeWorld.includes(key)) {
             container.classList.add('correct')
             fakeWorld = fakeWorld.slice(0, i+1) + fakeWorld.slice(i+2)
